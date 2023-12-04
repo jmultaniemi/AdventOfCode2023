@@ -5,6 +5,9 @@ import java.io.IOException;
 
 public class Day1 {
 
+    // Trebuchet?! 
+    // https://adventofcode.com/2023/day/1
+
     public static void main(String[] args) {
         // Source material in text file
         String filePath = "AoC-material.txt";
@@ -30,14 +33,14 @@ public class Day1 {
         }
     }
 
-    private static boolean containsNumberWord(String line, String numberWord) {
+    private static boolean containsWrittenNumber(String line, String numberWord) {
         return line.toLowerCase().contains(numberWord.toLowerCase());
     }
 
     private static String findWrittenNumber(String line) {
         String[] numberWords = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
         for (String word : numberWords) {
-            if (containsNumberWord(line, word)) {
+            if (containsWrittenNumber(line, word)) {
                 return word;
             }
         }
