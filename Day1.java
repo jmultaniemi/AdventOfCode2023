@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -8,7 +9,6 @@ public class Day1 {
         // Source material in text file
         String filePath = "AoC-material.txt";
 
-
         try {
             int lineNumber = 0;
             int totalSum = 0;
@@ -17,8 +17,8 @@ public class Day1 {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 lineNumber++;
-                int first = findFirstDigit(line);
-                int last = findLastDigit(line);
+                int first = findFirstNumber(line);
+                int last = findLastNumber(line);
                 int calibrationValue = getFirst(first) + getLast(last);
                 totalSum += calibrationValue;
             }
@@ -44,7 +44,7 @@ public class Day1 {
         return null;
     }
     
-    private static int findFirstDigit(String line) {
+    private static int findFirstNumber(String line) {
         char ch = '0';
         String writtenNumber = null;
         for (int index = 0; index < line.length(); index++) {
@@ -62,7 +62,7 @@ public class Day1 {
         return 0;
     }
 
-    private static int findLastDigit(String line) {
+    private static int findLastNumber(String line) {
         char ch = '0';
         String writtenNumber = null;
         for (int index = line.length() - 1; index >= 0; index--) {
@@ -101,7 +101,7 @@ public class Day1 {
             case "nine":
                 return 9;
             default:
-                return 0; // Return 0 for unrecognized written numbers
+                return 0;
         }
     }
 
